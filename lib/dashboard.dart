@@ -74,9 +74,9 @@ class DashboardPage extends StatelessWidget {
               ),
             ),
             // Menu buttons and background
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xFF4147D5),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
