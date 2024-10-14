@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/dashboard.dart';
 
 import 'TambahMitra.dart'; // Import the TambahMitra screen
 
@@ -19,11 +20,15 @@ class _ManajemenMitraState extends State<ManajemenMitra> {
         elevation: 0,
         centerTitle: false, // Set title to not be centered
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Color(0xFF4147D5)),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        icon: Icon(Icons.arrow_back, color: Color(0xFF4147D5)),
+        onPressed: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => DashboardPage()),
+          );
+        },
+      ),
+
         title: Text(
           "Manajemen Mitra",
           style: TextStyle(

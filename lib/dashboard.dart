@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/buatlaporan/mainlaporan.dart';
 import 'package:flutter_application_1/inbox/inbox.dart';
 import 'package:flutter_application_1/manajemenmitra/manajemenmitra.dart';
+import 'package:flutter_application_1/ceklaporan/ceklaporan.dart';
 
 class DashboardPage extends StatelessWidget {
   @override
@@ -12,6 +13,7 @@ class DashboardPage extends StatelessWidget {
         elevation: 0,
         title: Image.asset('assets/images/logo.png', height: 40),
         centerTitle: true,
+        automaticallyImplyLeading: false, // Menghilangkan tombol back
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -96,7 +98,12 @@ class DashboardPage extends StatelessWidget {
                             MaterialPageRoute(builder: (context) => BuatLaporanScreen()),
                           );
                         }),
-                        _buildMenuButton(context, Icons.file_copy, 'Cek Laporan', () {}),
+                        _buildMenuButton(context, Icons.file_copy, 'Cek Laporan', () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => CekLaporan()),
+                          );
+                        }),
                         _buildMenuButton(context, Icons.mail, 'Kotak Masuk', () {
                           Navigator.push(
                             context,
@@ -137,7 +144,7 @@ class DashboardPage extends StatelessWidget {
                           ),
                           child: Table(
                             columnWidths: {
-                              0: FlexColumnWidth(1),
+                              0: FlexColumnWidth(2.3),
                               1: FlexColumnWidth(4),
                               2: FlexColumnWidth(3),
                             },
