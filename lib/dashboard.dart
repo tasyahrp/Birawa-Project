@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/buatlaporan/mainlaporan.dart';
+import 'package:flutter_application_1/inbox/inbox.dart';
 import 'package:flutter_application_1/manajemenmitra/manajemenmitra.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -9,15 +10,8 @@ class DashboardPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.menu, color: Colors.black),
-          onPressed: () {},
-        ),
         title: Image.asset('assets/images/logo.png', height: 40),
         centerTitle: true,
-        actions: [
-          Icon(Icons.notifications, color: Colors.black),
-        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -103,7 +97,12 @@ class DashboardPage extends StatelessWidget {
                           );
                         }),
                         _buildMenuButton(context, Icons.file_copy, 'Cek Laporan', () {}),
-                        _buildMenuButton(context, Icons.mail, 'Kotak Masuk', () {}),
+                        _buildMenuButton(context, Icons.mail, 'Kotak Masuk', () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => InboxScreen()),
+                          );
+                        }),
                       ],
                     ),
                   ),
